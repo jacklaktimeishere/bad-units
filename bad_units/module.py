@@ -2,7 +2,10 @@ class UnitConversionError(Exception):
     pass
 
 class Unit:
-    def __init__(self, amount):
+    unit_type = None
+    base_units_per = None
+
+    def __init__(self, amount=1):
         self.amount = amount
 
     def to(self, other):
@@ -12,6 +15,7 @@ class Unit:
         if self.unit_type != other.unit_type:
             raise UnitConversionError("Units must be of the same type")
         
+        # Convert: self → base → other
         return other.__class__((self.amount * self.base_units_per) / other.base_units_per)
     
     def __repr__(self):
