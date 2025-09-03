@@ -15,7 +15,6 @@ class Unit:
         if self.unit_type != other.unit_type:
             raise UnitConversionError("Units must be of the same type")
         
-        # Convert: self → base → other
         return other.__class__((self.amount * self.base_units_per) / other.base_units_per)
     
     def __repr__(self):
