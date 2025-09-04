@@ -2,7 +2,7 @@
 Bad Units is a system for working with units, that is bad.
 
 # Unit class
-This is the most basic part of Bad Units. To make a new unit, you inherit from Unit and set the base_unit_per and the unit_type.
+This is the most basic part of Bad Units. To make a new unit, you inherit from Unit and set the base_units_per and the unit_type.
 Example:
 ```python
 class Meter(Unit):
